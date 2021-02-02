@@ -6,7 +6,7 @@ Java.perform(function() {
     var type = Java.use("java.net.Proxy$Type");
     var isa = Java.use("java.net.InetSocketAddress");
     okHttp.proxy.overload("java.net.Proxy").implementation = function() {
-        var sa = isa.$new("172.31.253.221", 7777); //此处为 自己代理的IP和端口号
+        var sa = isa.$new("ip", 端口); //此处为 自己代理的IP和端口号
         console.log("设置代理："+sa);
         var myproxy = jproxy.$new(type.HTTP.value, sa);
         arguments[0] = myproxy;
